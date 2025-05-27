@@ -203,6 +203,199 @@ section::before {
   }
 }
 
+/* Responsive classes for navbar */
+@media (min-width: 640px) {
+  .sm\:block {
+    display: block !important;
+  }
+  .sm\:hidden {
+    display: none !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .sm\:block {
+    display: none !important;
+  }
+  .sm\:hidden {
+    display: block !important;
+  }
+}
+
+/* Additional responsive styles */
+.list-none {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.transition-colors {
+  transition: color 0.2s ease;
+}
+
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+/* Tech Stack Hover Effects - Improved fading */
+.tech-item {
+  background: transparent;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 1.5rem 0.5rem 1rem 0.5rem;
+  width: 100%;
+  max-width: 120px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #dfd390;
+  font-weight: 600;
+  font-size: 22px;
+  cursor: pointer;
+  position: relative;
+  filter: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-item:hover {
+  transform: scale(1.1);
+}
+
+.tech-item .tech-icon {
+  margin-bottom: 10px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: none;
+}
+
+.tech-item:hover .tech-icon {
+  filter: drop-shadow(0 0 20px currentColor) drop-shadow(0 0 40px currentColor);
+}
+
+/* Experience Timeline Hover Effects */
+.experience-item {
+  background: rgba(223,211,144,0.1);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(223,211,144,0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(223,211,144,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.experience-item:hover {
+  background: rgba(223,211,144,0.15);
+  border-color: rgba(223,211,144,0.4);
+  transform: translateX(8px);
+  box-shadow: 0 8px 32px rgba(223,211,144,0.2);
+}
+
+.experience-item:hover::before {
+  left: 100%;
+}
+
+.experience-item h3 {
+  transition: color 0.3s ease;
+}
+
+.experience-item:hover h3 {
+  color: #fffbe0;
+}
+
+.experience-marker {
+  position: absolute;
+  left: -2rem;
+  top: 0.25rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #dfd390;
+  border: 3px solid rgba(29,27,66,0.9);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.experience-item:hover .experience-marker {
+  background: #fffbe0;
+  transform: scale(1.2);
+  box-shadow: 0 0 16px rgba(223,211,144,0.6);
+}
+
+/* Mobile optimization */
+@media (max-width: 640px) {
+  #root {
+    padding: 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  .hero .typewriter-text {
+    font-size: 1.25rem !important;
+  }
+  
+  .hero p {
+    font-size: 1rem !important;
+  }
+  
+  .experience-item:hover {
+    transform: translateX(4px);
+  }
+}
+
 .gamedev-project {
   display: flex;
   flex-direction: column;
