@@ -5,7 +5,7 @@ export function AboutSection() {
     <Section delay={0.12}>
       <h2 id="about">About Me</h2>
       <p>
-        Hi! I'm Ickor, a CS student passionate about game development, creative coding, and interactive technology. I love building things that are fun, beautiful, and a little bit weird. Always learning, always experimenting.
+        Hi! I'm Ickor, an 18 year old CS student passionate about game development, creative coding, and interactive technology. I like making things that are fun, cool, and a little weird. Always learning, always experimenting. Welcome to my empty Trophy Case lmao.
       </p>
     </Section>
   );

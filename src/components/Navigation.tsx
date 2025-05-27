@@ -38,13 +38,11 @@ export function Navigation() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [toggle]);
-
   const navLinks: NavLink[] = [
     { id: 'about', title: 'About' },
     { id: 'experience', title: 'Experience' },
     { id: 'tech', title: 'Tech Stack' },
     { id: 'gamedev', title: 'Projects' },
-    { id: 'contact', title: 'Contact' },
   ];
 
   const scrollToSection = (id: string) => {
@@ -116,15 +114,7 @@ export function Navigation() {
               display: 'flex',
               alignItems: 'center',
             }}>
-              KENZI
-              <span style={{ 
-                marginLeft: '0.5rem',
-                fontSize: '1.25rem',
-                color: 'white',
-                fontWeight: 'normal',
-              }}>
-                CHUA
-              </span>
+              KENZI CHUA
             </p>
           </div>
         </div>

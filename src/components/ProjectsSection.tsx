@@ -6,13 +6,7 @@ import TestiusThumb from '../assets/testius-gamius-thumb.png';
 export function ProjectsSection() {
   return (
     <Section delay={0.15}>
-      <h2 id="gamedev">GameDev Projects</h2>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-        gap: '2.5rem',
-        marginTop: '2.5rem',
-      }}>
+      <h2 id="gamedev">GameDev Projects</h2>      <div className="projects-grid">
         <motion.div
           className="gamedev-project"
           initial={{ opacity: 0, y: 60 }}
@@ -50,7 +44,7 @@ export function ProjectsSection() {
           />
           <h3 style={{ fontSize: 24, margin: 0, color: '#dfd390' }}>Testius Gamius</h3>
           <p style={{ textAlign: 'center', margin: '1rem 0 0 0', opacity: 0.92, fontSize: 16 }}>
-            A test game available on my itch.io page. Try it out! Expect absolutely nothing tho i just used this to test linking games
+            A test game available on my itch.io page. You can play it I thnk, expect absolutely nothing tho i just used this to test linking games
           </p>
           <div className="itch-link" style={{ marginTop: 16 }}>
             <a href="https://ickor.itch.io/test-game" target="_blank" rel="noopener noreferrer">

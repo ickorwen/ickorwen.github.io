@@ -21,14 +21,7 @@ export function TechStackSection() {  const techs: TechItem[] = [
   
   return (
     <Section delay={0.21}>
-      <h2 id="tech">Tech Stack</h2>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
-        gap: '1.5rem',
-        marginTop: '2rem',
-        justifyItems: 'center',
-      }}>        {techs.map((tech) => (
+      <h2 id="tech">Tech Stack</h2>      <div className="tech-grid">{techs.map((tech) => (
           <div
             key={tech.name}
             className="tech-item"

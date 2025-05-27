@@ -8,12 +8,11 @@ import {
   ExperienceSection,
   ProjectsSection,
   CSContentSection,
-  ContactSection,
 } from './components';
 
 function App() {
-  return (
-    <motion.div
+  return (    <motion.div
+      className="app-container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -22,14 +21,12 @@ function App() {
     >
       <Navigation />
       <div style={{ paddingTop: '80px' }}>
-        <Hero />
-        <main>
+        <Hero />        <main>
           <AboutSection />
           <TechStackSection />
           <ExperienceSection />
           <ProjectsSection />
           <CSContentSection />
-          <ContactSection />
         </main>
       </div>
     </motion.div>

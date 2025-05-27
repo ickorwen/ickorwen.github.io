@@ -6,4 +6,3 @@ export { ExperienceSection } from './ExperienceSection';
 export { TechStackSection } from './TechStackSection';
 export { ProjectsSection } from './ProjectsSection';
 export { CSContentSection } from './CSContentSection';
-export { ContactSection } from './ContactSection';
