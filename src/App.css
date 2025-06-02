@@ -581,6 +581,14 @@ section::before {
   max-width: 100%;
 }
 
+.cs-projects-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 100%;
+}
+
 @media (min-width: 641px) {
   .projects-grid {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -590,6 +598,11 @@ section::before {
   .tech-grid {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1.5rem;
+  }
+  
+  .cs-projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
   }
 }
 
@@ -602,6 +615,11 @@ section::before {
   .tech-grid {
     grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     gap: 1rem;
+  }
+  
+  .cs-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   /* Experience section mobile fixes */
