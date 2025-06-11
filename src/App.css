@@ -1,5 +1,22 @@
 * {
   box-sizing: border-box;
+  /* Remove mobile tap highlights and focus outlines */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+}
+
+/* Allow text selection for specific elements */
+p, h1, h2, h3, h4, h5, h6, span {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 html, body {
@@ -384,6 +401,17 @@ section::before {
   transition-duration: 200ms;
 }
 
+/* Tech Stack Grid Layout */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+  margin: 2rem 0;
+  max-width: 100%;
+}
+
 /* Tech Stack Hover Effects - Improved fading */
 .tech-item {
   background: transparent;
@@ -414,6 +442,11 @@ section::before {
   margin-bottom: 10px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   filter: none;
+}
+
+.tech-icon-svg {
+  width: 38px;
+  height: 38px;
 }
 
 .tech-item:hover .tech-icon {
@@ -529,12 +562,25 @@ section::before {
     width: 180px !important;
     height: 180px !important;
   }
+    /* Fix tech stack grid */
+  .tech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+    .tech-item {
+    max-width: 90px;
+    min-height: 90px;
+    padding: 0.75rem 0.25rem 0.5rem 0.25rem;
+    font-size: 14px;
+  }
+    .tech-item .tech-icon {
+    margin-bottom: 6px;
+  }
   
-  /* Fix tech stack grid */
-  .tech-item {
-    max-width: 100px;
-    min-height: 100px;
-    padding: 1rem 0.25rem 0.75rem 0.25rem;
+  .tech-icon-svg {
+    width: 32px !important;
+    height: 32px !important;
   }
     /* Mobile navigation adjustments */
   .navbar, .navbar-sticky {
@@ -557,75 +603,145 @@ section::before {
     min-height: 44px;
     min-width: 44px;
   }
-  
-  /* Improve scroll performance on mobile */
+    /* Improve scroll performance on mobile */
   * {
     -webkit-overflow-scrolling: touch;
   }
 }
 
-/* Responsive grid utilities */
-.projects-grid {
-  display: grid;
-  gap: 2rem;
-  margin-top: 2rem;
-  width: 100%;
-  max-width: 100%;
-}
-
-.tech-grid {
-  display: grid;
-  margin-top: 2rem;
-  justify-items: center;
-  width: 100%;
-  max-width: 100%;
-}
-
-.cs-projects-grid {
-  display: grid;
-  gap: 2rem;
-  margin-top: 2rem;
-  width: 100%;
-  max-width: 100%;
-}
-
-@media (min-width: 641px) {
-  .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
-  }
-  
+/* Extra small mobile screens */
+@media (max-width: 350px) {
   .tech-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+    .tech-item {
+    max-width: 75px;
+    min-height: 75px;
+    padding: 0.5rem 0.15rem 0.25rem 0.15rem;
+    font-size: 12px;
   }
   
-  .cs-projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+  .tech-item .tech-icon {
+    margin-bottom: 4px;
+  }
+  
+  .tech-item .tech-icon svg {
+    width: 28px !important;
+    height: 28px !important;
   }
 }
 
-@media (max-width: 640px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+/* Mobile touch and tap highlight fixes */
+a, button, [role="button"], .motion-div, div[style*="cursor: pointer"] {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Remove blue highlight on all interactive elements */
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+  -webkit-focus-ring-color: rgba(0,0,0,0) !important;
+}
+
+/* Ensure motion.div elements don't show tap highlights */
+.motion-div, [class*="motion"], div[style*="cursor"] {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Override any default focus styles */
+:focus {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+:active {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.navbar, .navbar-sticky {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  background: transparent;
+  border-radius: 1.2rem;
+  margin-bottom: 2.5rem;
+  padding: 1.2rem 0 0.7rem 0;
+  transition: all 0.3s;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  z-index: 100;
+}
+.navbar-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(29,27,66,0.98);
+  box-shadow: 0 2px 16px #1d1b4280;
+  border-bottom: 2px solid #dfd39044;
+  border-radius: 0 0 1.2rem 1.2rem;
+  padding: 0.5rem 2rem;
+  margin-bottom: 0;
+}
+.nav-link {
+  color: var(--flax);
+  text-decoration: none;
+  padding: 0.4em 1.2em;
+  border-radius: 0.7em;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  position: relative;
+}
+.nav-link:hover, .nav-link:focus {
+  background: #dfd390;
+  color: #1d1b42;
+  box-shadow: 0 2px 16px #dfd39099;
+  transform: scale(1.08) translateY(-2px);
+}
+.nav-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  background: rgba(29,27,66,0.7);
+  border-radius: 1.2rem;
+  margin: 0 auto 2.5rem auto;
+  padding: 1.2rem 0 0.7rem 0;
+  box-shadow: 0 2px 16px #1d1b4280;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  max-width: 700px;
+  transition: all 0.3s;
+}
+
+@media (max-width: 700px) {
+  .navbar, .navbar-sticky {
+    gap: 1.2rem;
+    font-size: 1rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
   }
-  
-  .tech-grid {
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-    gap: 1rem;
+  .nav-link {
+    padding: 0.4em 0.7em;
   }
-  
-  .cs-projects-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  /* Experience section mobile fixes */
-  .experience-item {
-    margin-left: 0;
-    padding-left: 1rem;
+  .nav-section {
+    gap: 1.2rem;
+    font-size: 1rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
   }
 }
 
@@ -728,81 +844,4 @@ section::before {
 
 .read-the-docs {
   color: #888;
-}
-
-.navbar, .navbar-sticky {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2.5rem;
-  background: transparent;
-  border-radius: 1.2rem;
-  margin-bottom: 2.5rem;
-  padding: 1.2rem 0 0.7rem 0;
-  transition: all 0.3s;
-  font-size: 1.15rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  z-index: 100;
-}
-.navbar-sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(29,27,66,0.98);
-  box-shadow: 0 2px 16px #1d1b4280;
-  border-bottom: 2px solid #dfd39044;
-  border-radius: 0 0 1.2rem 1.2rem;
-  padding: 0.5rem 2rem;
-  margin-bottom: 0;
-}
-.nav-link {
-  color: var(--flax);
-  text-decoration: none;
-  padding: 0.4em 1.2em;
-  border-radius: 0.7em;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
-  position: relative;
-}
-.nav-link:hover, .nav-link:focus {
-  background: #dfd390;
-  color: #1d1b42;
-  box-shadow: 0 2px 16px #dfd39099;
-  transform: scale(1.08) translateY(-2px);
-}
-.nav-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2.5rem;
-  background: rgba(29,27,66,0.7);
-  border-radius: 1.2rem;
-  margin: 0 auto 2.5rem auto;
-  padding: 1.2rem 0 0.7rem 0;
-  box-shadow: 0 2px 16px #1d1b4280;
-  font-size: 1.15rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  max-width: 700px;
-  transition: all 0.3s;
-}
-
-@media (max-width: 700px) {
-  .navbar, .navbar-sticky {
-    gap: 1.2rem;
-    font-size: 1rem;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
-  }
-  .nav-link {
-    padding: 0.4em 0.7em;
-  }
-  .nav-section {
-    gap: 1.2rem;
-    font-size: 1rem;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
-  }
 }

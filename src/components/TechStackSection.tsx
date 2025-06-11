@@ -9,14 +9,15 @@ interface TechItem {
   color: string;
 }
 
-export function TechStackSection() {  const techs: TechItem[] = [
-    { name: 'TypeScript', icon: <SiTypescript size={38} color="#3178c6" />, color: "#3178c6" },
-    { name: 'React', icon: <FaReact size={38} color="#61dafb" />, color: "#61dafb" },
-    { name: 'Vite', icon: <SiVite size={38} color="#ffd62e" />, color: "#ffd62e" },
-    { name: 'Godot', icon: <SiGodotengine size={38} color="#478cbf" />, color: "#478cbf" },
-    { name: 'Blender', icon: <SiBlender size={38} color="#f5792a" />, color: "#f5792a" },
-    { name: 'C++', icon: <SiCplusplus size={38} color="#00599c" />, color: "#00599c" },
-    { name: 'Python', icon: <SiPython size={38} color="#ffd343" />, color: "#ffd343" },
+export function TechStackSection() {  
+  const techs: TechItem[] = [
+    { name: 'TypeScript', icon: <SiTypescript className="tech-icon-svg" color="#3178c6" />, color: "#3178c6" },
+    { name: 'React', icon: <FaReact className="tech-icon-svg" color="#61dafb" />, color: "#61dafb" },
+    { name: 'Vite', icon: <SiVite className="tech-icon-svg" color="#ffd62e" />, color: "#ffd62e" },
+    { name: 'Godot', icon: <SiGodotengine className="tech-icon-svg" color="#478cbf" />, color: "#478cbf" },
+    { name: 'Blender', icon: <SiBlender className="tech-icon-svg" color="#f5792a" />, color: "#f5792a" },
+    { name: 'C++', icon: <SiCplusplus className="tech-icon-svg" color="#00599c" />, color: "#00599c" },
+    { name: 'Python', icon: <SiPython className="tech-icon-svg" color="#ffd343" />, color: "#ffd343" },
   ];
   
   return (
