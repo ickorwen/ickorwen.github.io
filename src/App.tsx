@@ -8,6 +8,9 @@ import {
   ExperienceSection,
   ProjectsSection,
   CSContentSection,
+  CursorParticles,
+  InteractiveStarfield,
+  AmbientMusicToggle,
 } from './components';
 
 function App() {
@@ -17,10 +20,22 @@ function App() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
-      style={{ minHeight: '100vh', background: 'var(--space-cadet)' }}
+      style={{ minHeight: '100vh', background: 'var(--space-cadet)', display: 'flex', flexDirection: 'column' }}
     >
+      {/* Interactive Background Effects */}
+      <InteractiveStarfield />
+      <CursorParticles />
+      
+      {/* Ambient Music Control */}
+      <AmbientMusicToggle />
+      
       <Navigation />
-      <div style={{ paddingTop: '80px' }}>
+      <div style={{ 
+        paddingTop: '40px', 
+        flex: 1, 
+        display: 'flex', 
+        flexDirection: 'column'
+      }}>
         <Hero />        <main>
           <AboutSection />
           <TechStackSection />

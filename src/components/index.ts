@@ -6,3 +6,6 @@ export { ExperienceSection } from './ExperienceSection';
 export { TechStackSection } from './TechStackSection';
 export { ProjectsSection } from './ProjectsSection';
 export { CSContentSection } from './CSContentSection';
+export { CursorParticles } from './CursorParticles';
+export { InteractiveStarfield } from './InteractiveStarfield';
+export { AmbientMusicToggle } from './AmbientMusicToggle';
